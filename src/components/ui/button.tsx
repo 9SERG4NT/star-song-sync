@@ -18,12 +18,20 @@ const buttonVariants = cva(
           "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
+        // Karaoke-specific variants
+        neon: "bg-gradient-primary text-primary-foreground shadow-neon hover:shadow-glow-pulse transition-all duration-300 transform hover:scale-105",
+        stage: "bg-gradient-stage text-white shadow-stage border border-white/20 hover:bg-white/10 backdrop-blur-sm",
+        record: "bg-neon-pink text-white shadow-neon hover:bg-neon-pink/90 animate-pulse-neon",
+        duet: "bg-gradient-to-r from-neon-purple to-neon-blue text-white shadow-neon hover:from-neon-purple/90 hover:to-neon-blue/90",
+        floating: "bg-black/80 backdrop-blur-lg text-white border border-white/20 hover:bg-black/90 shadow-lg",
       },
       size: {
         default: "h-10 px-4 py-2",
         sm: "h-9 rounded-md px-3",
         lg: "h-11 rounded-md px-8",
+        xl: "h-12 rounded-lg px-10 text-base",
         icon: "h-10 w-10",
+        fab: "h-14 w-14 rounded-full", // Floating action button
       },
     },
     defaultVariants: {
