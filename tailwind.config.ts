@@ -26,7 +26,8 @@ export default {
 				foreground: 'hsl(var(--foreground))',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
+					foreground: 'hsl(var(--primary-foreground))',
+					glow: 'hsl(var(--primary-glow))'
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
@@ -61,7 +62,31 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				neon: {
+					pink: 'hsl(var(--neon-pink))',
+					purple: 'hsl(var(--neon-purple))',
+					blue: 'hsl(var(--neon-blue))',
+					green: 'hsl(var(--neon-green))'
+				},
+				stage: {
+					light: 'hsl(var(--stage-light))'
 				}
+			},
+			backgroundImage: {
+				'gradient-primary': 'var(--gradient-primary)',
+				'gradient-stage': 'var(--gradient-stage)',
+				'gradient-glow': 'var(--gradient-glow)'
+			},
+			boxShadow: {
+				'neon': 'var(--shadow-neon)',
+				'stage': 'var(--shadow-stage)',
+				'glow-pulse': 'var(--glow-pulse)'
+			},
+			animation: {
+				'glow-pulse': 'glow-pulse 2s ease-in-out infinite alternate',
+				'bounce-slow': 'bounce 3s infinite',
+				'pulse-neon': 'pulse-neon 2s ease-in-out infinite alternate'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,11 +109,45 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'glow-pulse': {
+					'0%': {
+						boxShadow: '0 0 20px hsl(var(--primary) / 0.3)'
+					},
+					'100%': {
+						boxShadow: '0 0 30px hsl(var(--primary) / 0.8), 0 0 40px hsl(var(--primary) / 0.6)'
+					}
+				},
+				'pulse-neon': {
+					'0%, 100%': {
+						opacity: '1',
+						transform: 'scale(1)'
+					},
+					'50%': {
+						opacity: '0.8',
+						transform: 'scale(1.02)'
+					}
+				},
+				'slide-up': {
+					'0%': {
+						transform: 'translateY(100%)',
+						opacity: '0'
+					},
+					'100%': {
+						transform: 'translateY(0)',
+						opacity: '1'
+					}
+				},
+				'fade-in': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateY(20px)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateY(0)'
+					}
 				}
-			},
-			animation: {
-				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
 			}
 		}
 	},
